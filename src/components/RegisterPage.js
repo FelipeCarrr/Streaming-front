@@ -23,8 +23,8 @@ function Register() {
     try {
       const response = await api.post('/api/users', formData);
       console.log(response.data);
-      // Redirige al usuario a la página de inicio de sesión después del registro exitoso
-      navigate('/login');
+      
+      navigate('/');
     } catch (error) {
       console.error('Error al registrar el usuario:', error);
     }
