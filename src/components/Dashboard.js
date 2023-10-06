@@ -48,6 +48,11 @@ const Dashboard = () => {
             </Grid>
           ))}
         </Grid>
+        <Link to="/movielist" style={{ textDecoration: 'none' }}>
+          <Button variant="contained" color="primary" style={{ marginTop: '20px' }}>
+            Ir a MovieList
+          </Button>
+        </Link>
       </Container>
     </div>
   );
