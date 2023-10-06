@@ -20,12 +20,18 @@ function Login() {
     e.preventDefault();
     try {
       const response = await api.post('/api/auth/login', formData);
-      console.log(response.data);
+      console.log('Respuesta completa del servidor:', response); // Agrega esta línea para imprimir la respuesta completa
+      const { userRole } = response.data;
+      localStorage.setItem('userRole', userRole);
+      
       navigate('/dashboard');
     } catch (error) {
       console.error('Error al iniciar sesión:', error);
     }
   };
+  
+  
+  
 
   return (
     <Container maxWidth="sm">

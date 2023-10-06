@@ -39,7 +39,7 @@ function MovieList() {
                   component="img"
                   alt={movie.title}
                   src={movie.imageUrl}
-                  style={{ objectFit: 'cover', width: '280px', height: '150px' }}
+                  style={{ objectFit: 'cover', width: '290px', height: '150px' }}
                 />
                 <CardContent>
                   <Typography variant="h6" align="center">
