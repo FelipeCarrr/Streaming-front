@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import axios from 'axios';
 import { Container, Typography, TextField, Button } from '@mui/material';
+import MenuBar from './MenuBar';
 
 function CreateMovie() {
   const [formData, setFormData] = useState({
@@ -34,7 +35,10 @@ function CreateMovie() {
   };
 
   return (
-    <Container maxWidth="md">
+    
+    <div>
+    <MenuBar/>
+    <Container maxWidth="md" style={{ marginTop: '20px' }}>
       <Typography variant="h4" component="div" align="center" gutterBottom>
         Crear Película
       </Typography>
@@ -106,6 +110,7 @@ function CreateMovie() {
         </Button>
       </form>
     </Container>
+    </div>
   );
 }
 

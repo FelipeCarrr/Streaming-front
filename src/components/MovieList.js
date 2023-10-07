@@ -35,12 +35,13 @@ function MovieList() {
           {movies.map((movie) => (
             <Grid item xs={12} sm={6} md={4} lg={3} key={movie.id}>
               <Card>
-                <CardMedia
-                  component="img"
-                  alt={movie.title}
-                  src={movie.imageUrl}
-                  style={{ objectFit: 'cover', width: '290px', height: '150px' }}
-                />
+              <CardMedia
+                component="img"
+                alt={movie.title}
+                src={movie.imageUrl}
+                style={{ objectFit: 'cover', maxWidth: '100%', height: 'auto' }}
+              />
+
                 <CardContent>
                   <Typography variant="h6" align="center">
                     {movie.title}
