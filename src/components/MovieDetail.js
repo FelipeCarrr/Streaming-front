@@ -11,7 +11,7 @@ const MovieDetail = () => {
   useEffect(() => {
     
     axios
-      .get(`https://streaming-app.azurewebsites.net/api/videos/${id}`) 
+      .get(`http://localhost:8080/api/videos/${id}`) 
       .then((response) => {
         setMovie(response.data);
       })

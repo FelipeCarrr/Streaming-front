@@ -2,16 +2,18 @@ import React from 'react';
 import { AppBar, Toolbar, Typography, Button, IconButton } from '@mui/material';
 import { useNavigate } from 'react-router-dom';
 import HomeIcon from '@mui/icons-material/Home';
-import AddIcon from '@mui/icons-material/Add'; // Importa el icono de agregar
+import AddIcon from '@mui/icons-material/Add';
+import { MdMovieFilter } from 'react-icons/md';
+import { BiSolidCameraMovie } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
 
 const MenuBar = () => {
   const navigate = useNavigate();
-  const userRole = localStorage.getItem('userRole'); // Obtiene el rol del usuario desde el almacenamiento local
+  const userRole = localStorage.getItem('userRole');
 
   const handleLogout = () => {
     localStorage.removeItem('authToken');
-    localStorage.removeItem('userRole'); // Elimina el rol del usuario al cerrar sesión
+    localStorage.removeItem('userRole');
     navigate('/');
   };
 
@@ -25,14 +27,26 @@ const MenuBar = () => {
           <Typography variant="h6" style={{ marginLeft: '8px', flexGrow: 1 }}>
             Streaming
           </Typography>
-          {userRole === 'Admin' && ( // Renderiza el icono de agregar solo si el rol es 'Admin'
+          {userRole === 'Admin' && (
             <Link to="/createmovie" style={{ textDecoration: 'none', color: 'inherit' }}>
               <IconButton color="inherit">
                 <AddIcon />
               </IconButton>
             </Link>
           )}
-          <Button color="inherit" onClick={handleLogout}>
+          <Link to="/series" style={{ textDecoration: 'none', color: 'inherit', marginRight: '12px' }}>
+            <Button color="inherit">
+              <MdMovieFilter />
+              Series
+            </Button>
+          </Link>
+          <Link to="/dashboard" style={{ textDecoration: 'none', color: 'inherit', marginRight: '20px' }}>
+            <Button color="inherit">
+              <BiSolidCameraMovie />
+              Películas
+            </Button>
+          </Link>
+          <Button variant="contained" onClick={handleLogout}>
             Cerrar Sesión
           </Button>
         </Toolbar>

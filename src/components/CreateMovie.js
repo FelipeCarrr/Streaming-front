@@ -22,7 +22,7 @@ function CreateMovie() {
 
     // Realiza una solicitud POST para crear la película en tu API
     axios
-      .post('https://streaming-app.azurewebsites.net/api/videos/create', formData) // Reemplaza '/api/videos/' con la ruta correcta de tu API
+      .post('http://localhost:8080/api/videos/create', formData) // Reemplaza '/api/videos/' con la ruta correcta de tu API
       .then((response) => {
         console.log('Película creada con éxito:', response.data);
         // Puedes redirigir al usuario a la página de detalles de la película

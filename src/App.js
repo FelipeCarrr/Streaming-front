@@ -6,6 +6,9 @@ import RegisterPage from './components/RegisterPage';
 import MovieList from './components/MovieList';
 import MovieDetail from './components/MovieDetail';
 import CreateMovie from './components/CreateMovie';
+import SeriesList from './components/SeriesList';
+import SeriesDetail from './components/SeriesDetail';
+import AddSeriesForm from './components/AddSeriesForm';
 
 function App() {
   return (
@@ -16,7 +19,10 @@ function App() {
         <Route path="/register" element={<RegisterPage />} />
         <Route path="/movielist" element={<MovieList />} />
         <Route path="/createmovie" element={<CreateMovie />} />
-        <Route path="/movies/:id" element={<MovieDetail />} /> {/* Ruta con parámetro de ID */}
+        <Route path="/movies/:id" element={<MovieDetail />} />
+        <Route path="/series" element={<SeriesList />} />
+        <Route path="/series/:id" element={<SeriesDetail />} />
+        <Route path="/add" element={<AddSeriesForm />} />
       </Routes>
     </Router>
   );

@@ -16,7 +16,7 @@ function MovieList() {
 
   useEffect(() => {
     axios
-      .get('https://streaming-app.azurewebsites.net/api/videos/')
+      .get('http://localhost:8080/api/videos/')
       .then((response) => {
         setMovies(response.data);
       })
