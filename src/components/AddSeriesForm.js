@@ -8,6 +8,7 @@ import {
   Paper,
   IconButton,
 } from '@mui/material';
+import MenuBar from './MenuBar';
 import AddCircleOutlineIcon from '@mui/icons-material/AddCircleOutline';
 
 const AddSeriesForm = () => {
@@ -91,6 +92,8 @@ const AddSeriesForm = () => {
   };
 
   return (
+    <div>
+    <MenuBar/>
     <Container component="main" maxWidth="sm">
       <Paper elevation={3} style={{ padding: '20px', marginTop: '20px' }}>
         <Typography variant="h5">Agregar Nueva Serie</Typography>
@@ -216,6 +219,7 @@ const AddSeriesForm = () => {
         </form>
       </Paper>
     </Container>
+    </div>
   );
 };
 

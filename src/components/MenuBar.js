@@ -6,6 +6,7 @@ import AddIcon from '@mui/icons-material/Add';
 import { MdMovieFilter } from 'react-icons/md';
 import { BiSolidCameraMovie } from 'react-icons/bi';
 import { Link } from 'react-router-dom';
+import { HiOutlineDocumentAdd } from "react-icons/hi";
 
 const MenuBar = () => {
   const navigate = useNavigate();
@@ -31,6 +32,13 @@ const MenuBar = () => {
             <Link to="/createmovie" style={{ textDecoration: 'none', color: 'inherit' }}>
               <IconButton color="inherit">
                 <AddIcon />
+              </IconButton>
+            </Link>
+          )}
+          {userRole === 'Admin' && (
+            <Link to="/add" style={{ textDecoration: 'none', color: 'inherit' }}>
+              <IconButton color="inherit">
+              <HiOutlineDocumentAdd />
               </IconButton>
             </Link>
           )}
